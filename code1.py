@@ -14,8 +14,8 @@ names = []
 camera = picamera.PiCamera()
 face_locations = []
 face_encodings = []
-s1 = 15
-s2 = 37
+s1 = 21
+s2 = 36
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(s1, GPIO.OUT)
 GPIO.setup(s2, GPIO.OUT)
@@ -143,9 +143,9 @@ def lockDoor(channel):
             servo1.stop()
             servo2.stop()
 
-GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUT_DOWN)
+GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUT_DOWN)
+GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUT_DOWN)
 GPIO.add_event_detect(10,GPIO.RISING,callback=recognize)
 GPIO.add_event_detect(12,GPIO.RISING,callback=addUser)
 GPIO.add_event_detect(18,GPIO.RISING,callback=lockDoor)
